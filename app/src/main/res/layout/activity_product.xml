@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+<!--        <variable-->
+<!--            name="viewModel"-->
+<!--            type="com.joe.viewmodelsample.ProductModel" />-->
+
+<!--        <variable-->
+<!--            name="viewModel"-->
+<!--            type="com.joe.viewmodelsample.ObservableProductModel" />-->
+<!--        <variable-->
+<!--            name="viewModel"-->
+<!--            type="com.joe.viewmodelsample.ProductViewModel" />-->
+        <variable
+            name="viewModel"
+            type="com.joe.viewmodelsample.ProductViewModel2" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="20dp"
+        tools:context=".ProductActivity">
+
+        <TextView
+            android:id="@+id/productName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{viewModel.name}"
+            android:textSize="36sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="@{viewModel.desc}"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/productPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="@{`$` +Integer.toString(viewModel.price)}"
+            android:textSize="24sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="數量:"
+                android:textSize="24sp" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/minus"
+                    android:layout_width="40dp"
+                    android:layout_height="wrap_content"
+                    android:onClick="@{() -> viewModel.minus()}"
+                    android:text="-" />
+
+                <TextView
+                    android:id="@+id/numberResult"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{Integer.toString(viewModel.number)}" />
+
+                <Button
+                    android:id="@+id/add"
+                    android:layout_width="40dp"
+                    android:layout_height="wrap_content"
+                    android:onClick="@{() -> viewModel.add()}"
+                    android:text="+" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+</layout>
