@@ -2,6 +2,7 @@ package com.joe.viewmodelsample
 
 import androidx.databinding.ObservableField
 
+//若旋轉螢幕，資料會消失
 class ObservableProductModel(
     name: String,
     desc: String,

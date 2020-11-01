@@ -11,7 +11,7 @@ import androidx.lifecycle.ViewModel
  */
 
 //繼承LifeCycle的ViewModel
-//想塞入參數，用ViewModelFactory
+//想塞入參數，用ViewModelFactory協助建立
 class ProductViewModel2(private val defaultNumber: Int) : ViewModel() {
     var name: ObservableField<String> = ObservableField()
     var desc: ObservableField<String> = ObservableField()

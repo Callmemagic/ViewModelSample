@@ -10,7 +10,7 @@ import androidx.lifecycle.ViewModel
  * author: Joe Cheng
  */
 
-//繼承LifeCycle的ViewModel
+//繼承LifeCycle的ViewModel，無參數
 class ProductViewModel : ViewModel() {
     var name: ObservableField<String> = ObservableField()
     var desc: ObservableField<String> = ObservableField()
